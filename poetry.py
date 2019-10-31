@@ -157,8 +157,11 @@ def combine_poems(poem1, poem2):
     
 
 def user_poem():
-    poem_u = input("Type in your poem, end each line with a ';'.")
-    poem_list_u = poem_u.split(";")
+    poem_u = input("Type in your poem, end each line with a ';'. Leave blank for set poem")
+    if poem_u == "":
+        poem_list_u = poem_1
+    else:
+        poem_list_u = poem_u.split(";")
 
     correct = False
     while correct != True:
