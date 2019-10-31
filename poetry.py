@@ -156,9 +156,30 @@ def combine_poems(poem1, poem2):
     lines_printed_random(both_poems)
     
 
+def user_poem():
+    poem_u = input("Type in your poem, end each line with a ';'.")
+    poem_list_u = poem_u.split(";")
+
+    correct = False
+    while correct != True:
+        choice = input('''Would you like to:
+        1 - repeat it backwards
+        2 - Randomize it
+        3 - repeat it the same''')
+        if choice == 1:
+            lines_printed_backwards(poem_list_u)
+            correct = True
+        if choice == 2:
+            lines_printed_random(poem_list_u)
+            correct = True
+        if choice == 3:
+            for line in poem_list_u:
+                print(line)
+            correct = True
 
 
 if __name__ == '__main__':
     #lines_printed_backwards(poem_list_2)
     #lines_printed_random(poem_list_1)
-    combine_poems(poem_list_1, poem_list_2)
+    #combine_poems(poem_list_1, poem_list_2)
+    user_poem()
