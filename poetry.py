@@ -1,4 +1,4 @@
-
+from random import randint
 
 poem = '''Once there was a tree….;
 and she loved a little boy.;
@@ -109,6 +109,7 @@ And the tree was happy.'''
 poem_list = poem.split(";")
 #for line in poem_list:
   #print(line)
+#poem_list.remove(poem_list[2])
 
 def lines_printed_backwards():
     num = 0
@@ -117,11 +118,31 @@ def lines_printed_backwards():
         num += 1
 
 def lines_printed_random():
-    pass
+    random_lines=[]
+    num_rand = []    
+    
+    count = 1
+    while count < len(poem_list):
+        need = 1
+        rand = randint(0, len(poem_list)-1)
+        for num in num_rand:
+            if rand == num:
+                need += 0
+            else:
+                need += 1
+        if need > len(num_rand):
+            random_lines.append(poem_list[rand])
+            count += 1
+            num_rand.append(rand)
+            
+    for line in random_lines:  
+        print(line)
+                
 
 
 def custom_stuff():
     pass
 
 if __name__ == '__main__':
-    lines_printed_backwards()
+    #lines_printed_backwards()
+    lines_printed_random()
