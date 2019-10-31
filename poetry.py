@@ -1,6 +1,6 @@
 from random import randint
 
-poem = '''Once there was a tree….;
+poem_1 = '''Once there was a tree….;
 and she loved a little boy.;
 And everyday the boy would come;
 and he would gather her leaves;
@@ -54,7 +54,6 @@ And so the boy cut off her branches;
 and carried them away;
 to build his house.;
 And the tree was happy.;
-
 But the boy stayed away for a long time.;
 And when he came back,;
 the tree was so happy;
@@ -74,7 +73,6 @@ And so the boy cut down her trunk;
 and made a boat and sailed away.;
 And the tree was happy;
 … but not really.;
-
 And after a long time;
 the boy came back again.;
 “I am sorry, Boy,”;
@@ -106,7 +104,14 @@ Come, Boy, sit down. Sit down and rest.”;
 And the boy did.;
 And the tree was happy.'''
 
-poem_list = poem.split(";")
+poem_2 = '''There is a place where the sidewalk ends;
+And before the street begins,;
+And there the grass grows soft and white,;
+And there the sun burns crimson bright,;
+And there the moon-bird rests from his flight;
+To cool in the peppermint wind.'''
+
+poem_list = poem_1.split(";")
 #for line in poem_list:
   #print(line)
 #poem_list.remove(poem_list[2])
@@ -122,7 +127,7 @@ def lines_printed_random():
     num_rand = []    
     
     count = 1
-    while count < len(poem_list):
+    while count <= len(poem_list):
         need = 1
         rand = randint(0, len(poem_list)-1)
         for num in num_rand:
@@ -134,6 +139,7 @@ def lines_printed_random():
             random_lines.append(poem_list[rand])
             count += 1
             num_rand.append(rand)
+            print(need)
             
     for line in random_lines:  
         print(line)
