@@ -111,44 +111,54 @@ And there the sun burns crimson bright,;
 And there the moon-bird rests from his flight;
 To cool in the peppermint wind.'''
 
-poem_list = poem_1.split(";")
+poem_list_1 = poem_1.split(";")
+poem_list_2 = poem_2.split(";")
 #for line in poem_list:
   #print(line)
 #poem_list.remove(poem_list[2])
 
-def lines_printed_backwards():
+def lines_printed_backwards(poem):
     num = 0
-    while num < len(poem_list):
-        print(poem_list[len(poem_list)-num-1])
+    while num < len(poem):
+        print(poem[len(poem)-num-1])
         num += 1
 
-def lines_printed_random():
+def lines_printed_random(poem):
     random_lines=[]
     num_rand = []    
     
     count = 1
-    while count <= len(poem_list):
+    while count <= len(poem):
         need = 1
-        rand = randint(0, len(poem_list)-1)
+        rand = randint(0, len(poem)-1)
         for num in num_rand:
             if rand == num:
                 need += 0
             else:
                 need += 1
         if need > len(num_rand):
-            random_lines.append(poem_list[rand])
+            random_lines.append(poem[rand])
             count += 1
             num_rand.append(rand)
-            print(need)
+            #print(need)
             
     for line in random_lines:  
         print(line)
                 
 
 
-def custom_stuff():
-    pass
+def combine_poems(poem1, poem2):
+    both_poems = []
+    for line in poem1:
+        both_poems.append(line)
+    for line in poem2:
+        both_poems.append(line)
+    lines_printed_random(both_poems)
+    
+
+
 
 if __name__ == '__main__':
-    #lines_printed_backwards()
-    lines_printed_random()
+    #lines_printed_backwards(poem_list_2)
+    #lines_printed_random(poem_list_1)
+    combine_poems(poem_list_1, poem_list_2)
